@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>New team</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="teamForm" (ngSubmit)="onFormSubmit()">
+    <ion-item>
+      <ion-label position="floating">Name</ion-label>
+      <ion-input formControlName="name" type="text" required></ion-input>
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl.name.errors?.required">
+        Name is required.
+      </span>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Country</ion-label>
+      <ion-input formControlName="country" type="text" required>
+      </ion-input>
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl.name.errors?.required">
+        Country is required.
+      </span>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Stadium</ion-label>
+      <ion-input formControlName="stadium" type="text" required>
+      </ion-input>
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl.name.errors?.required">
+        Stadium is required.
+      </span>
+    </ion-item>
+
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="primary" shape="full" expand="block">Add Team</ion-button>
+        <ion-button href="/teams" color="primary" shape="full" expand="block">Cancel</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

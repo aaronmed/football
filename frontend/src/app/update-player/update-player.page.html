@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Modify player</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="playerUpdateForm" (ngSubmit)="onFormSubmit()">
+    <ion-item>
+      <ion-label position="floating">Name</ion-label>
+      <ion-input formControlName="name" type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Country</ion-label>
+      <ion-input formControlName="country" type="text" required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Position</ion-label>
+      <ion-input formControlName="position" type="text" required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Team</ion-label>
+      <ion-select formControlName="team">
+        <ion-select-option *ngFor="let t of teams" value="{{t.name}}">{{t.name}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="primary" shape="full" expand="block">Update Player</ion-button>
+        <ion-button href="/players" color="primary" shape="full" expand="block">Cancel</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

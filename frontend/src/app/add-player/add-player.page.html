@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>New player</ion-title>
+    <ion-buttons slot="start">
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="playerForm" (ngSubmit)="onFormSubmit()">
+    <ion-item>
+      <ion-label position="floating">Name</ion-label>
+      <ion-input formControlName="name" type="text" required></ion-input>
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl.name.errors?.required">
+        Name is required.
+      </span>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Country</ion-label>
+      <ion-input formControlName="country" type="text" required></ion-input>
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl.name.errors?.required">
+        Country is required.
+      </span>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Position</ion-label>
+      <ion-input formControlName="position" type="text" required></ion-input>
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl.name.errors?.required">
+        Position is required.
+      </span>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Team</ion-label>
+      <ion-select formControlName="team">
+        <ion-select-option *ngFor="let t of teams" value="{{t.name}}">{{t.name}}</ion-select-option>
+      </ion-select>
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl.name.errors?.required">
+        Team is required.</span>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="primary" shape="full" expand="block">Add Player</ion-button>
+        <ion-button href="/players" color="primary" shape="full" expand="block">Cancel</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

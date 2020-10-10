@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Home</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button href="/home">
+        <ion-icon name="home-outline"></ion-icon>
+        <ion-label>Home</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button href="/players">
+        <ion-icon name="person-outline"></ion-icon>
+        <ion-label>Players</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button href="/teams">
+        <ion-icon name="shield-outline"></ion-icon>
+        <ion-label>Teams</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+  <div id="welcome">
+    Welcome to the biggest football databse of the World!
+  </div>
+  <div id="container">
+
+    Player of the Day
+    <ion-card id="player-card" *ngIf="player">
+      <ion-card-header>
+        <ion-card-title>{{player.name}}</ion-card-title>
+        <ion-card-subtitle>{{player.country}}</ion-card-subtitle>
+        <ion-card-subtitle>{{player.position}}</ion-card-subtitle>
+        <ion-card-subtitle>{{player.team}}</ion-card-subtitle>
+      </ion-card-header>
+    </ion-card>
+
+  </div>
+</ion-content>
