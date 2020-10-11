@@ -1,0 +1,18 @@
+CREATE DATABASE football;
+
+USE football;
+
+CREATE TABLE players(
+id INT(11) PRIMARY KEY AUTO_INCREMENT,
+name VARCHAR(45) NOT NULL,
+country VARCHAR(45),
+position VARCHAR(45),
+team VARCHAR(45)
+);
+
+CREATE TABLE teams(
+id INT(11) PRIMARY KEY AUTO_INCREMENT,
+name VARCHAR(45) NOT NULL,
+stadium VARCHAR(45),
+country VARCHAR(45)
+);
