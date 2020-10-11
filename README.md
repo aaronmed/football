@@ -1,6 +1,6 @@
 #  Football ⚽
 
-_Simple CRUD project where you can storage teams and players_
+_Simple CRUD project where you can storage teams and players. You can find the SQL to run the project [here](https://github.com/aaronmed/football/blob/master/backend/football.sql)_
 
 ## Built With 🛠️
 
